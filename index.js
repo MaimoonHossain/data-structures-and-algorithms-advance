@@ -128,3 +128,58 @@
 // The hash map approach is to use a map to store the elements and their indices. We iterate through the input array and keep track of the current window of size k using two pointers L and R.
 // At each step, we check if the current element is already in the map. If it is, we return true. If not, we add the element to the map.
 // If the window size exceeds k, we remove the element at index L from the map and increment L.
+
+//Question: Find the length of the longest subarray, with the same value in each position.
+
+// const longestSubarray = (nums) => {
+//   let length = 0;
+//   let left = 0;
+
+//   for (let right = 1; right < nums.length; right++) {
+//     if (nums[left] !== nums[right]) {
+//       left = right;
+//     }
+
+//     length = Math.max(length, right - left + 1);
+//   }
+
+//   return length;
+// };
+
+// console.log(longestSubarray([1, 1, 0, 0, 1, 1, 1, 0])); // 3
+
+// time complexity: O(n)
+// space complexity: O(1)
+// where n is the length of the input array
+// The approach is to use a sliding window to find the longest subarray with the same value in each position. We keep track of the left index of the current subarray and iterate through the input array.
+// At each step, we check if the element at the left index is different from the element at the right index. If it is, we update the left index to the right index.
+// We calculate the length of the current subarray and update the maximum length found so far.
+
+// Question: Find the minimum length subarray, where the sum is greater than or equal to the target. Assume all values are positive.
+
+// const shortestSubarray = (nums, target) => {
+//   let minLen = Infinity;
+//   let sum = 0;
+//   let left = 0;
+
+//   for (let right = 0; right <= nums.length; right++) {
+//     sum += nums[right];
+
+//     while (sum >= target) {
+//       minLen = Math.min(minLen, right - left + 1);
+//       sum -= nums[left];
+//       left++;
+//     }
+//   }
+
+//   return minLen === Infinity ? 0 : minLen;
+// };
+
+// console.log(shortestSubarray([2, 3, 1, 2, 4, 3], 7)); // 2
+
+// time complexity: O(n)
+// space complexity: O(1)
+// where n is the length of the input array
+// The approach is to use a sliding window to find the minimum length subarray with a sum greater than or equal to the target. We keep track of the left index of the current subarray and iterate through the input array.
+// At each step, we add the element at the right index to the sum. If the sum is greater than or equal to the target, we update the minimum length found so far and move the left index to the right until the sum is less than the target.
+// We return the minimum length found, or 0 if no subarray meets the condition.
