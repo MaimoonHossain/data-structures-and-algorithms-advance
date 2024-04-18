@@ -1,3 +1,5 @@
+// Question: Given an array of integers, find the subarray with the largest sum. Return the sum of the subarray.
+
 // const bruteForce = (nums) => {
 //   let maxSum = -Infinity;
 //   for (let i = 0; i < nums.length; i++) {
