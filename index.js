@@ -75,6 +75,8 @@
 
 // console.log(slidingWindow([1, -3, 2, 1, -1])); // [3, 6]
 
+// Given an array, return true if there are two elements within a window of size k that are equal.
+
 // using the brute force approach for the sliding window problem
 
 // const duplicatesBruteForce = (nums, k) => {
